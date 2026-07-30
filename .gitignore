@@ -1,0 +1,29 @@
+# Python缓存、虚拟环境
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+ENV/
+
+# Jupyter缓存
+.ipynb_checkpoints/
+
+# VSCode配置
+.vscode/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 数据集（不上传h5）
+datasets/
+
+# 模型文件
+models/
+*.pth
+*.h5
+
+# 日志
+*.log
