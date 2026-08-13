@@ -1,0 +1,9 @@
+# VSCode本地环境，不上传
+.vscode/
+*.code-workspace
+
+# Python缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
