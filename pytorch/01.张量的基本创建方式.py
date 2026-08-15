@@ -64,7 +64,7 @@ def dm02():
 
     #场景4：尝试直接创建指定维度（例如：2行3列的张量）
     t4 = torch.IntTensor(2,3)
-    print(f"t4:{t4},type:{type(t4)}")  #会报错，只有大写可以支持形状
+    print(f"t4:{t4},type:{type(t4)}")  
 
 #3.定义函数，演示：torch.IntTensor、torch.FloatTensor、torch.DoubleTensor 创建指定类型的张量
 
