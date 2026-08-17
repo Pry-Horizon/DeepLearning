@@ -7,9 +7,9 @@
     squeeze()       删除所有为一的维度
     transpose()     一次只能交换两个维度
     permute()       一次可以同时交换多个维度
-    view()
-    contiguous()
-    is_contiguous()
+    view()          只能修改连续的张量，逻辑顺序和存储顺序一致
+    contiguous()    使张量变成连续张量
+    is_contiguous() 判断张量是否连续
 
 """
 
@@ -59,14 +59,30 @@ def dm03():
     #3,改变维度(2,3,4)-->(4,2,3)
     t3 = t1.permute(2,0,1)
     print(f"t3:{t3},shape:{t3.shape}")
+    print("==" * 30)
 
 #4.演示viwe()函数、contiguous()函数、is_contiguous()函数
-
-
+def dm04():
+    #1.定义张量。
+    t1 = torch.randint(1,10,(2,3))
+    print(f"t1:{t1},shape:{t1.shape}")
+    #2.判断张量是否连续
+    print(t1.is_contiguous())   #ture
+    #3.通过view()函数，修改上述张量的形状
+    t2 = t1.view(3,2)
+    print(f"t2:{t2},shape:{t2.shape}")
+    #4.通过演示transpose()交换维度-->交换之后，不连续了.
+    t3 = t1.transpose(0,1)
+    print(f"t3:{t3},shape:{t3.shape},{t3.is_contiguous()}")
+    #5.尝试把t3张量通过.view()从(3,2)-->(2,3),报错，因为t3不是连续张量
+    #6.可以通过.contiguous()把t3转成连续张量t4
+    t4 = t3.contiguous().view(2,3)
+    print(f"t4:{t4},shape:{t4.shape},{t4.is_contiguous()}")
+    print(f"t1:{t1},shape:{t1.shape},{t1.is_contiguous()}")
 
 #5.测试
 if __name__ == '__main__':
     dm01()
     dm02()
     dm03()
-    
+    dm04()
