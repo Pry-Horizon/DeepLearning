@@ -1,0 +1,96 @@
+--- upstream/src/yolo.c
++++ build/src/yolo.c
+@@ -47,7 +47,7 @@
+ void train_yolo(char *cfgfile, char *weightfile)
+ {
+     char *train_images = "data/voc.0712.trainval";
+-    char *backup_directory = "/home/pjreddie/backup/";
++    char *backup_directory = "backup";
+     srand(time(0));
+     data_seed = time(0);
+     char *base = basecfg(cfgfile);
+@@ -90,6 +90,8 @@
+     //while(i*imgs < N*120){
+     while(get_current_batch(net) < net.max_batches){
+         i += 1;
++        printf("PAPER_EPOCH %d/135 UPDATE %d/34913\n", ((i-1)*64)/16551+1, i);
++        fflush(stdout);
+         time=clock();
+         pthread_join(load_thread, 0);
+         train = buffer;
+@@ -111,9 +113,9 @@
+         avg_loss = avg_loss*.9 + loss*.1;
+ 
+         printf("%d: %f, %f avg, %f rate, %lf seconds, %d images\n", i, loss, avg_loss, get_current_rate(net), sec(clock()-time), i*imgs);
+-        if(i%1000==0){
++        if((i*64)/16551 != ((i-1)*64)/16551){
+             char buff[256];
+-            sprintf(buff, "%s/%s_%d.weights", backup_directory, base, i);
++            sprintf(buff, "%s/%s_last.weights", backup_directory, base);
+             save_weights(net, buff);
+         }
+         free_data(train);
+@@ -184,7 +186,7 @@
+ 
+     char *base = "results/comp4_det_test_";
+     //list *plist = get_paths("data/voc.2007.test");
+-    list *plist = get_paths("data/voc.2012.test");
++    list *plist = get_paths("data/voc.2007.test");
+     char **paths = (char **)list_to_array(plist);
+ 
+     layer l = net.layers[net.n-1];
+--- upstream/src/darknet.c
++++ build/src/darknet.c
+@@ -13,6 +13,7 @@
+ 
+ extern void run_imagenet(int argc, char **argv);
+ extern void run_yolo(int argc, char **argv);
++extern void run_benchmark(int argc, char **argv);
+ extern void run_coco(int argc, char **argv);
+ extern void run_writing(int argc, char **argv);
+ extern void run_captcha(int argc, char **argv);
+@@ -214,7 +215,9 @@
+     }
+ #endif
+ 
+-    if(0==strcmp(argv[1], "imagenet")){
++    if(0==strcmp(argv[1], "benchmark")){
++        run_benchmark(argc, argv);
++    } else if(0==strcmp(argv[1], "imagenet")){
+         run_imagenet(argc, argv);
+     } else if (0 == strcmp(argv[1], "average")){
+         average(argc, argv);
+--- upstream/Makefile
++++ build/Makefile
+@@ -10,7 +10,7 @@
+ 
+ CC=gcc
+ NVCC=nvcc
+-OPTS=-Ofast
++OPTS=-Ofast -fcommon
+ LDFLAGS= -lm -pthread -lstdc++ 
+ COMMON= 
+ CFLAGS=-Wall -Wfatal-errors 
+@@ -34,7 +34,7 @@
+ LDFLAGS+= -L/usr/local/cuda/lib64 -lcuda -lcudart -lcublas -lcurand
+ endif
+ 
+-OBJ=gemm.o utils.o cuda.o deconvolutional_layer.o convolutional_layer.o list.o image.o activations.o im2col.o col2im.o blas.o crop_layer.o dropout_layer.o maxpool_layer.o softmax_layer.o data.o matrix.o network.o connected_layer.o cost_layer.o parser.o option_list.o darknet.o detection_layer.o imagenet.o captcha.o route_layer.o writing.o box.o nightmare.o normalization_layer.o avgpool_layer.o coco.o dice.o yolo.o layer.o compare.o classifier.o
++OBJ=benchmark.o gemm.o utils.o cuda.o deconvolutional_layer.o convolutional_layer.o list.o image.o activations.o im2col.o col2im.o blas.o crop_layer.o dropout_layer.o maxpool_layer.o softmax_layer.o data.o matrix.o network.o connected_layer.o cost_layer.o parser.o option_list.o darknet.o detection_layer.o imagenet.o captcha.o route_layer.o writing.o box.o nightmare.o normalization_layer.o avgpool_layer.o coco.o dice.o yolo.o layer.o compare.o classifier.o
+ ifeq ($(GPU), 1) 
+ OBJ+=convolutional_kernels.o deconvolutional_kernels.o activation_kernels.o im2col_kernels.o col2im_kernels.o blas_kernels.o crop_layer_kernels.o dropout_layer_kernels.o maxpool_layer_kernels.o softmax_layer_kernels.o network_kernels.o avgpool_layer_kernels.o yolo_kernels.o
+ endif
+--- upstream/cfg/yolo.cfg
++++ build/cfg/paper.cfg
+@@ -9,9 +9,9 @@
+ 
+ learning_rate=0.001
+ policy=steps
+-steps=200,400,600,20000,30000
++steps=200,400,600,19396,27154
+ scales=2.5,2,2,.1,.1
+-max_batches = 40000
++max_batches = 34913
+ 
+ [crop]
+ crop_width=448
