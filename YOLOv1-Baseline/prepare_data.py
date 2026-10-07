@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import tarfile
 import urllib.request
-from protocol import ROOT as BASE_DIR
+BASE_DIR = Path(__file__).resolve().parent
 
 # URLs and MD5 values from torchvision's official VOC dataset implementation.
 DATASET_YEAR_DICT = {

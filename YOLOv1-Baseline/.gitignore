@@ -6,3 +6,5 @@ outputs/
 runs/
 build/
 .venv/
+.tools/
+dist/
