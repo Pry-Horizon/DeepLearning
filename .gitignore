@@ -27,3 +27,9 @@ models/
 
 # 日志
 *.log
+
+#权重、检查文件
+checkpoints/
+*.pt
+*.pth
+*.ckpt

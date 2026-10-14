@@ -1,0 +1,344 @@
+{
+  "weights": "C:\\GitHub\\DeepLearning\\YOLOv1\\checkpoints\\raw.pt",
+  "weights_kind": "raw",
+  "completed_epochs": 60,
+  "total_training_epochs": 210,
+  "device": "cuda:0",
+  "display_threshold": 0.2,
+  "nms_iou": 0.5,
+  "results": [
+    {
+      "source": "C:\\GitHub\\DeepLearning\\YOLOv1\\images\\2007_000793.jpg",
+      "annotated_image": "C:\\GitHub\\DeepLearning\\YOLOv1\\outputs\\0001_2007_000793.png",
+      "width": 500,
+      "height": 375,
+      "detections": [
+        {
+          "class_id": 14,
+          "class": "person",
+          "confidence": 0.5779291391372681,
+          "box_xyxy_pixels": [
+            394.29643750190735,
+            85.24719625711441,
+            469.3898856639862,
+            255.4795816540718
+          ]
+        },
+        {
+          "class_id": 14,
+          "class": "person",
+          "confidence": 0.32779020071029663,
+          "box_xyxy_pixels": [
+            284.53201055526733,
+            81.69618062674999,
+            330.88749647140503,
+            199.98038560152054
+          ]
+        },
+        {
+          "class_id": 14,
+          "class": "person",
+          "confidence": 0.28453755378723145,
+          "box_xyxy_pixels": [
+            123.09999763965607,
+            116.04364961385727,
+            210.15934646129608,
+            267.71537214517593
+          ]
+        },
+        {
+          "class_id": 1,
+          "class": "bicycle",
+          "confidence": 0.2808511555194855,
+          "box_xyxy_pixels": [
+            162.28362917900085,
+            163.2067635655403,
+            305.43050169944763,
+            276.4686718583107
+          ]
+        },
+        {
+          "class_id": 14,
+          "class": "person",
+          "confidence": 0.2758370041847229,
+          "box_xyxy_pixels": [
+            267.7757441997528,
+            88.71881850063801,
+            317.1081244945526,
+            201.643668115139
+          ]
+        },
+        {
+          "class_id": 14,
+          "class": "person",
+          "confidence": 0.22990745306015015,
+          "box_xyxy_pixels": [
+            98.24682772159576,
+            104.31066155433655,
+            169.44463551044464,
+            270.7856297492981
+          ]
+        }
+      ]
+    },
+    {
+      "source": "C:\\GitHub\\DeepLearning\\YOLOv1\\images\\2007_000799.jpg",
+      "annotated_image": "C:\\GitHub\\DeepLearning\\YOLOv1\\outputs\\0002_2007_000799.png",
+      "width": 500,
+      "height": 441,
+      "detections": [
+        {
+          "class_id": 14,
+          "class": "person",
+          "confidence": 0.5559446215629578,
+          "box_xyxy_pixels": [
+            283.7504744529724,
+            225.09357476234436,
+            495.07415294647217,
+            435.4578813314438
+          ]
+        },
+        {
+          "class_id": 12,
+          "class": "horse",
+          "confidence": 0.25041836500167847,
+          "box_xyxy_pixels": [
+            63.126131892204285,
+            22.84949639439583,
+            290.71682691574097,
+            440
+          ]
+        },
+        {
+          "class_id": 12,
+          "class": "horse",
+          "confidence": 0.23181992769241333,
+          "box_xyxy_pixels": [
+            109.32523012161255,
+            39.40016287565231,
+            489.56674337387085,
+            420.7235925793648
+          ]
+        }
+      ]
+    },
+    {
+      "source": "C:\\GitHub\\DeepLearning\\YOLOv1\\images\\2007_000804.jpg",
+      "annotated_image": "C:\\GitHub\\DeepLearning\\YOLOv1\\outputs\\0003_2007_000804.png",
+      "width": 333,
+      "height": 500,
+      "detections": [
+        {
+          "class_id": 8,
+          "class": "chair",
+          "confidence": 0.27683907747268677,
+          "box_xyxy_pixels": [
+            187.92394816875458,
+            229.24566268920898,
+            332,
+            462.49061822891235
+          ]
+        },
+        {
+          "class_id": 8,
+          "class": "chair",
+          "confidence": 0.2417547106742859,
+          "box_xyxy_pixels": [
+            32.30876661837101,
+            346.69530391693115,
+            136.4447402358055,
+            489.9405837059021
+          ]
+        }
+      ]
+    },
+    {
+      "source": "C:\\GitHub\\DeepLearning\\YOLOv1\\images\\2007_000822.jpg",
+      "annotated_image": "C:\\GitHub\\DeepLearning\\YOLOv1\\outputs\\0004_2007_000822.png",
+      "width": 500,
+      "height": 374,
+      "detections": [
+        {
+          "class_id": 13,
+          "class": "motorbike",
+          "confidence": 0.4820033609867096,
+          "box_xyxy_pixels": [
+            226.49532556533813,
+            181.6922087073326,
+            357.83833265304565,
+            316.4284157752991
+          ]
+        },
+        {
+          "class_id": 13,
+          "class": "motorbike",
+          "confidence": 0.4014706611633301,
+          "box_xyxy_pixels": [
+            116.42509698867798,
+            197.22754335403442,
+            240.87554216384888,
+            349.0905430316925
+          ]
+        }
+      ]
+    },
+    {
+      "source": "C:\\GitHub\\DeepLearning\\YOLOv1\\images\\2007_000836.jpg",
+      "annotated_image": "C:\\GitHub\\DeepLearning\\YOLOv1\\outputs\\0005_2007_000836.png",
+      "width": 318,
+      "height": 480,
+      "detections": [
+        {
+          "class_id": 14,
+          "class": "person",
+          "confidence": 0.47165048122406006,
+          "box_xyxy_pixels": [
+            86.26310402154922,
+            88.49425077438354,
+            220.34987711906433,
+            321.1519432067871
+          ]
+        },
+        {
+          "class_id": 12,
+          "class": "horse",
+          "confidence": 0.3835107982158661,
+          "box_xyxy_pixels": [
+            63.42121946811676,
+            182.5100612640381,
+            241.04362607002258,
+            388.71548652648926
+          ]
+        }
+      ]
+    },
+    {
+      "source": "C:\\GitHub\\DeepLearning\\YOLOv1\\images\\2007_000837.jpg",
+      "annotated_image": "C:\\GitHub\\DeepLearning\\YOLOv1\\outputs\\0006_2007_000837.png",
+      "width": 500,
+      "height": 275,
+      "detections": [
+        {
+          "class_id": 3,
+          "class": "boat",
+          "confidence": 0.3547256588935852,
+          "box_xyxy_pixels": [
+            256.28283619880676,
+            102.39964500069618,
+            361.94077134132385,
+            161.68414950370789
+          ]
+        },
+        {
+          "class_id": 3,
+          "class": "boat",
+          "confidence": 0.24440188705921173,
+          "box_xyxy_pixels": [
+            258.7534785270691,
+            63.309964537620544,
+            360.78834533691406,
+            140.55002331733704
+          ]
+        }
+      ]
+    },
+    {
+      "source": "C:\\GitHub\\DeepLearning\\YOLOv1\\images\\2007_000847.jpg",
+      "annotated_image": "C:\\GitHub\\DeepLearning\\YOLOv1\\outputs\\0007_2007_000847.png",
+      "width": 375,
+      "height": 500,
+      "detections": [
+        {
+          "class_id": 14,
+          "class": "person",
+          "confidence": 0.520869791507721,
+          "box_xyxy_pixels": [
+            46.59467563033104,
+            101.91099345684052,
+            322.2707659006119,
+            499
+          ]
+        }
+      ]
+    },
+    {
+      "source": "C:\\GitHub\\DeepLearning\\YOLOv1\\images\\2007_000862.jpg",
+      "annotated_image": "C:\\GitHub\\DeepLearning\\YOLOv1\\outputs\\0008_2007_000862.png",
+      "width": 500,
+      "height": 375,
+      "detections": [
+        {
+          "class_id": 3,
+          "class": "boat",
+          "confidence": 0.4031972587108612,
+          "box_xyxy_pixels": [
+            301.9278347492218,
+            124.68819692730904,
+            351.15620493888855,
+            162.84393891692162
+          ]
+        }
+      ]
+    },
+    {
+      "source": "C:\\GitHub\\DeepLearning\\YOLOv1\\images\\2007_000876.jpg",
+      "annotated_image": "C:\\GitHub\\DeepLearning\\YOLOv1\\outputs\\0009_2007_000876.png",
+      "width": 500,
+      "height": 334,
+      "detections": [
+        {
+          "class_id": 7,
+          "class": "cat",
+          "confidence": 0.6823899149894714,
+          "box_xyxy_pixels": [
+            96.74376249313354,
+            18.637744426727295,
+            409.81525182724,
+            333
+          ]
+        }
+      ]
+    },
+    {
+      "source": "C:\\GitHub\\DeepLearning\\YOLOv1\\images\\2007_001299.jpg",
+      "annotated_image": "C:\\GitHub\\DeepLearning\\YOLOv1\\outputs\\0010_2007_001299.png",
+      "width": 429,
+      "height": 500,
+      "detections": [
+        {
+          "class_id": 9,
+          "class": "cow",
+          "confidence": 0.32740676403045654,
+          "box_xyxy_pixels": [
+            52.734018847346306,
+            28.843998908996582,
+            234.76525211334229,
+            405.205637216568
+          ]
+        },
+        {
+          "class_id": 9,
+          "class": "cow",
+          "confidence": 0.296790212392807,
+          "box_xyxy_pixels": [
+            312.0368050932884,
+            231.67014122009277,
+            398.0731471180916,
+            415.77720642089844
+          ]
+        },
+        {
+          "class_id": 9,
+          "class": "cow",
+          "confidence": 0.23196755349636078,
+          "box_xyxy_pixels": [
+            216.0071700811386,
+            231.6974401473999,
+            324.1435421705246,
+            402.87595987319946
+          ]
+        }
+      ]
+    }
+  ]
+}

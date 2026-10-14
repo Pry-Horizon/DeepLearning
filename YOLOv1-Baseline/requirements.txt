@@ -1,6 +1,0 @@
-# Use compatible versions already installed in the shared environment.
-# Do not blindly upgrade shared torch/torchvision; their binaries must match.
-torch>=1.13
-torchvision>=0.14
-numpy>=1.24
-Pillow>=9.1
