@@ -33,3 +33,6 @@ checkpoints/
 *.pt
 *.pth
 *.ckpt
+
+# Downloaded CIFAR-10 archive (keep locally)
+/pytorch/day06/data/cifar-10-python.tar.gz
